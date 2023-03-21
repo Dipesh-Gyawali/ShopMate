@@ -1,0 +1,34 @@
+{
+    "products":[
+      { 
+        "id": 10001,
+        "name": "Basic React 1",
+        "price": 100,
+        "in_stock": true
+      },
+      { 
+        "id": 10002,
+        "name": "Basic React 2",
+        "price": 101,
+        "in_stock": true
+      },
+      { 
+        "id": 10003,
+        "name": "Basic React 3",
+        "price": 99,
+        "in_stock": false
+      },
+      { 
+        "id": 10004,
+        "name": "Basic React 4",
+        "price": 58,
+        "in_stock": true
+      },
+      { 
+        "id": 10005,
+        "name": "Basic React 5",
+        "price": 888,
+        "in_stock": false
+      }
+    ]
+}
