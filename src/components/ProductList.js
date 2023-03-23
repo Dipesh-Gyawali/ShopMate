@@ -1,24 +1,21 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
+import { useFetch } from '../hooks/useFetch';
+
 
 export const ProductList = () => {
-    const [products, setProducts] = useState([]);
     const [url, setUrl] = useState(["http://localhost:8000/products"]);
-
-    useEffect (() => {
-        fetch(url)
-        .then(response => response.json())
-        .then(data => setProducts(data));
-    }, [url]);
+    const { data : products } = useFetch(url);
 
   return (
     <section>
-        <h1>Data Fetching using useEffect</h1>
-        
-        <button onClick={()=> setUrl("http://localhost:8000/products")}>All</button>
-        <button onClick={()=> setUrl("http://localhost:8000/products?in_stock=true")}>In stock </button>
+        <h1>Data Fetching</h1>
 
+        <div className='filter'>
+            <button onClick={()=> setUrl("http://localhost:8000/products")}>All</button>
+            <button onClick={()=> setUrl("http://localhost:8000/products?in_stock=true")}>In stock </button>
+        </div>
 
-        {products.map((product)=> (
+        {products && products.map((product)=> (
             <div className='card' key={product.id}>
                 <p className='id'>{product.id}</p>
                 <p className='name'>{product.name}</p>
